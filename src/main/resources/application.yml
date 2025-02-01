@@ -1,0 +1,34 @@
+spring:
+  profiles:
+    active: dev
+  devtools:
+    restart:
+      enabled: true
+  jackson:
+    serialization.indent_output: true
+  application:
+    name: cache
+
+server:
+  port: 50109
+
+application:
+  auth-info:
+    host: http://192.168.30.50
+    uri: /token
+    clientId: garm
+    clientSecret: garm_secret
+    grant_password: password
+    grant_refresh: refresh_token
+    username: garmestani87
+    password: garmestani87_password
+  upstream-info:
+    host: http://192.168.30.50
+    uri: /garm/v1
+    encoding: base64
+
+kafka:
+  bootstrap-servers: kafka.test.local:49153,kafka.test.local:49154,kafka.test.local:49155
+  producer:
+    ack-config: all
+    retries-config: 0
